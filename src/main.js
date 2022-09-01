@@ -1,11 +1,19 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
 
-import './assets/main.css'
+// import './assets/main.css';
+import dayjs from 'dayjs';
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(router)
+app.directive('timeformat', {
+  mounted(el, binding) {
+    const time = dayjs(binding.value).format('YYYY年MM月DD日');
+    el.innerText = time;
+  },
+});
 
-app.mount('#app')
+app.use(router);
+
+app.mount('#app');
