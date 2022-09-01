@@ -39,6 +39,12 @@ const { data, error } = useFetch('https://randomuser.me/api/');
 </script>
 
 <template>
+  <ul>
+    <li><router-link to="/">Home</router-link></li>
+    <li><router-link to="/about">About</router-link></li>
+    <li><router-link to="/loading">Loading</router-link></li>
+    <li><router-link to="/avatar">Avatar</router-link></li>
+  </ul>
   <div>
     <h1>{{ age }}</h1>
     <h1>{{ people1.num }}</h1>
